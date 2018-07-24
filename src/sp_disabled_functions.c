@@ -553,7 +553,7 @@ static int hook_functions(HashTable* to_hook_ht, HashTable* hooked_ht) {
     if (!HOOK_FUNCTION(ZSTR_VAL(key), disabled_functions_hook,
                        PHP_FN(check_disabled_function)) ||
         check_is_builtin_name(((sp_list_node*)Z_PTR_P(value))->data)) {
-      zend_symtable_add_new(hooked_ht, key, value);
+      zend_symbtable_add_new(hooked_ht, key, value);
       zend_hash_del(to_hook_ht, key);
     }
   }
